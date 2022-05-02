@@ -453,6 +453,11 @@ body {
     color: #fff;
     cursor: pointer;
 }
+.overly-box .box-name {
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--main-Color);
+}
 /* End Portfolio */
 /* Start Pricing  */
 .pricing .box {
@@ -757,6 +762,43 @@ body {
     display: none;
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+    display: none;
+}
+.loader span {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+}
+
+.loader span::after {
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-color: var(--main-Color) transparent var(--main-Color) var(--main-Color);
+    border-style: solid;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: loader 0.5s linear infinite;
+    -webkit-animation: loader 1s  linear infinite;
+}
+
+
 /* Start Animation  */
 @keyframes round {
     100% {
@@ -807,6 +849,22 @@ body {
         -moz-transform: scale(1.5);
         -ms-transform: scale(1.5);
         -o-transform: scale(1.5);
+}
+}
+@keyframes loader {
+    80% {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+}
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
 }
 }
 /* End Animation  */

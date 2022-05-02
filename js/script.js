@@ -175,11 +175,26 @@ PortfolioImg.forEach((img)=> {
 
         overlyBox.appendChild(boxImg)
 
+        if (img.alt !== "") {
+
+            let BoxName = document.createElement("h2")
+
+            BoxName.className = "box-name"
+
+            boxImg.appendChild(BoxName)
+
+            let BoxNameText = document.createTextNode(img.alt)
+
+            BoxName.appendChild(BoxNameText)
+
+        }
+
         let imgBox = document.createElement("img")
 
         imgBox.src = img.src
 
         boxImg.appendChild(imgBox)
+
 
         let closeButton = document.createElement("span")
 
@@ -289,6 +304,16 @@ $(window).scroll(function () {
 
 })
 
+// Loader Section 
+
+$(window).ready(function () {
+
+    $(".loader").fadeIn()
+
+    $(".loader").fadeOut(5000)
+
+})
+
 
 window.onscroll = function () {
 
@@ -306,7 +331,7 @@ window.onscroll = function () {
 
     // State Section 
 
-    if (window.scrollY >= StateOffsetTop) {
+    if (window.scrollY >= StateOffsetTop - 400) {
 
         if (!Started) {
 
