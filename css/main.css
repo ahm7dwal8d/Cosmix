@@ -35,6 +35,29 @@ body {
         width: 100%;
     }
 }
+.hidden {
+    opacity: 0;
+}
+.right {
+    position: relative;
+    right: -300px;
+    opacity: 0;
+}
+.left {
+    position: relative;
+    left: -300px;
+    opacity: 0;
+}
+.top {
+    position: relative;
+    top: -300px;
+    opacity: 0;
+}
+.bottom {
+    position: relative;
+    bottom: -300px;
+    opacity: 0;
+}
 /* End Global Rules  */
 /* Start Header  */
 .header {
@@ -104,14 +127,20 @@ body {
 }
 /* End Header  */
 /* Start Landing  */
-.landing {
-    position: relative;
-    background-image: url(../images/Slider/01.jpg);
-    height: 90vh;
-    background-attachment: fixed;
-    background-size: cover;
+
+.landing .landing-slider {
+    overflow: hidden;
 }
-.landing::after {
+.landing .slider {
+    display: flex;
+    width: 400%;
+}
+.landing .slide {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.landing .slide::after {
     content: '';
     position: absolute;
     top: 0;
@@ -120,18 +149,44 @@ body {
     height: 100%;
     background-color: rgba(0 , 0 , 0 , 0.5);
 }
-.landing .container {
-    z-index: 1;
+.landing .slide .container {
+    width: 100%;
     position: absolute;
     top: 50%;
+    margin: 0 50px;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
+    z-index: 1;
+}
+.landing .slider-1 {
+    background-image: url(../images/Slider/01.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.landing .slider-2 {
+    background-image: url(../images/Slider/02.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.landing .slider-3 {
+    background-image: url(../images/Slider/03.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.landing .slider-4 {
+    background-image: url(../images/Slider/10.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.landing .container {
+    text-align: center;
 }
 .landing .container p {
-    width: 500px;
+    width: 700px;
+    margin: 20px auto;
 }
 @media (max-width: 767px) {
     .landing .container p {
@@ -145,6 +200,32 @@ body {
     display: flex;
     justify-content: center;
     color: var(--main-Color);
+    margin: 20px auto;
+}
+.landing .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+}
+.landing .btn button {
+    border: none;
+    background: none;
+    position: absolute;
+    font-size: 30px;
+    z-index: 1;
+    color: #fff;
+}
+.landing .btn .prev {
+    left: 0;
+}
+.landing .btn .next {
+    right: 0;
 }
 /* End Landing  */
 /* Start Box Model  */
@@ -231,6 +312,7 @@ body {
 /* Start Free  */
 .free {
     background-color: var(--main-Color);
+    overflow: hidden;
 }
 .free .button {
     display: flex;
@@ -308,6 +390,9 @@ body {
 }
 /* End Services */
 /* Start Feature */
+.feature {
+    overflow: hidden;
+}
 .feature .feat-head span {
     padding: 20px;
     margin: 0 1px;
@@ -363,6 +448,9 @@ body {
 }
 /* End Feature */
 /* Start Portfolio */
+.portfolio {
+    overflow: hidden;
+}
 .portfolio li {
     position: relative;
     list-style: none;
@@ -460,6 +548,9 @@ body {
 }
 /* End Portfolio */
 /* Start Pricing  */
+.pricing {
+    overflow: hidden;
+}
 .pricing .box {
     position: relative;
     border: 1px solid #eee;
@@ -548,6 +639,9 @@ body {
 }
 /* End Pricing  */
 /* Start Team  */
+.team {
+    overflow: hidden;
+}
 .team .box {
     position: relative;
     border: 1px solid #eee;
@@ -579,6 +673,7 @@ body {
     height: 60vh;
     background-attachment: fixed;
     background-size: cover;
+    overflow: hidden;
 }
 .testimonlis .container {
     position: absolute;
@@ -612,7 +707,9 @@ body {
 }
 /* End Testimonlis */
 /* Start State  */
-
+    .state {
+        overflow: hidden;
+    }
 .state span {
     color: var(--main-Color);
 }
@@ -621,8 +718,13 @@ body {
 }
 /* End State  */
 /* Start Blog */
+.blog {
+    overflow: hidden;
+}
 .blog .box {
     position: relative;
+    border: 1px solid #eee;
+    padding: 10px;
 }
 .blog .box img {
     width: 100%;
@@ -671,6 +773,40 @@ body {
 }
 /* End Blog */
 /* Start Clients */
+.clients {
+    position: relative;
+    overflow: hidden;
+}
+.clients .container {
+    display: flex;
+    width: 250%;
+}
+.clients .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+}
+.clients .btn button {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 30px;
+}
+.clients .btn .prev {
+    left: 0;
+}
+.clients .btn .next {
+    right: 0;
+}
+.clients .container .slider {
+    width: 25%;
+}
 .clients img {
     opacity: 0.6;
     cursor: pointer;
@@ -685,6 +821,9 @@ body {
 }
 /* End Clients */
 /* Start Contact  */
+.contact {
+    overflow: hidden;
+}
 .contact h4 span {
     color: var(--main-Color);
 }
